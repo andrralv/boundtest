@@ -1,0 +1,48 @@
+$desktop: 720px;
+
+// colors
+$bound-background: #F2F3F9;
+$bound-white: #FFFFFF;
+$bound-grey: #E9ECF4;
+$bound-blue-submit: #2E6FED;
+$bound-black: #213547;
+$bound-link: #646cff;
+$bound-link-hover: #535bf2;
+
+@mixin min-width($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+button {
+  border-radius: 10px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+
+@mixin button-cancel {
+  background-color: $bound-white;
+  font-size: 14px;
+  height: 30px;
+  border: 1px solid $bound-grey;
+
+  &:hover {
+    background-color: $bound-grey;
+  }
+}
+
+@mixin button-submit {
+  background-color: $bound-blue-submit;
+  font-size: 14px;
+  height: 30px;
+  padding: 6px 10px;
+  color: $bound-white;
+}

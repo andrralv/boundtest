@@ -1,0 +1,21 @@
+@import './Styles.scss';
+
+body {
+  width: calc( 100% );
+  max-width: calc( 100vw - 1em );
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.middle-section {
+  text-align: center;
+}
+
+.button-submit {
+  @include button-submit;
+  margin: 20px 30px 20px 10px;
+}

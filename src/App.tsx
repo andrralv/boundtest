@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import SidePanel from './components/SidePanel'
-import './App.css'
+import './App.scss'
 
 function App() {
   const [isPanelOpen, setIsPanelOpen] = useState(false)
@@ -11,12 +11,12 @@ function App() {
         <div className="button-section">
           <button 
             onClick={() => setIsPanelOpen(!isPanelOpen)}
-            className="boundtest-button">
-              {`${isPanelOpen ? 'Close' : 'Open'} Side Panel`}
+            className="boundtest-button button-submit">
+              {'Create New Website'}
           </button>
         </div>
+        <SidePanel isPanelOpen={isPanelOpen} setIsPanelOpen={setIsPanelOpen}/>
       </div>
-      <SidePanel />
     </div>
   )
 }

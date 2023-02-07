@@ -1,8 +1,109 @@
+@import '../Styles.scss';
+
+@mixin desktop {
+  @media (min-width: 900px) { @content; }
+}
+
 .SidePanel {
-  position: absolute;
-  left: 70%;
-  background-color: red;
-  height: 100%;
-  top: 0%;
-  width: 500px;
+  .sidepanel-backdrop {
+    background: black;
+    position: absolute;
+    opacity: 0.5;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+  }
+
+  .sidepanel-content {
+    border-left: 1px solid $bound-grey;
+    position: absolute;
+    background-color: $bound-background;
+    height: 100%;
+    top: 0%;
+    right: 0;
+    width: 100%;
+    animation-name: slide;
+    animation-duration: 0.5s;
+    
+  
+    @include min-width($desktop) {
+      left: 60%;
+      width: 40%;
+    }
+  }
+
+  @keyframes slide {
+    from {transform: translateX(100%);}
+    to {transform: translateX(0%);}
+  }
+
+  .PanelHeader {
+    position: relative;
+    height: 60px;
+    background-color: $bound-white;
+    display: flex;
+    justify-content: space-between;
+
+    .header-title, .close-icon {
+      margin-top: 17px;
+    }
+
+    .header-title {
+      margin-left: 20px;
+    }
+    
+    .close-icon:after{
+      margin-right: 20px;
+      border: 1px solid lightgray;
+      border-radius: 20px;
+      padding: 0px 7px 2px;
+      font-size: 13px;
+      border-radius: 50%;
+      display: inline-block;
+      content: "\00d7"; /* This will render the 'X' */
+      cursor: pointer;
+    }
+  }
+
+  .PanelFooter {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: $bound-white;
+
+    .footer-buttons {
+      display: flex;
+      flex-direction: column-reverse;
+      text-align: center;
+      width: 80%;
+      margin: 0 auto;
+
+      @include desktop {    
+        justify-content: flex-end;
+        flex-direction: initial;
+        width: 100%;
+     }
+    }
+
+    .button-submit {
+      @include button-submit;
+      margin-top: 20px;
+      padding: 0 10px;
+      margin: 20px 0;
+      @include desktop {    
+        margin: 20px 20px 20px 0;
+      }
+    }
+
+    .button-cancel {
+      @include button-cancel;
+      margin-top: 20px;
+      padding: 0 10px;
+      margin: 20px 0;
+      @include desktop {    
+        margin: 20px 20px 20px 0;
+      }
+    }
+  }
 }
