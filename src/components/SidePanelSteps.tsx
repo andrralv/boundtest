@@ -35,8 +35,8 @@ const SidePanelSteps = (props: SidePanelStepsType) => {
   }, [currentStep])
 
   const keyPressHandler = (e: KeyboardEvent, step: number) => {
-   if (e.code === 'Space') {
-    setCurrentStep(step);
+   if (e.code === 'Space' || e.code === 'Enter') {
+setCurrentStep(step);
    }
   }
 
