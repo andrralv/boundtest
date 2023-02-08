@@ -4,10 +4,15 @@ $desktop: 720px;
 $bound-background: #F2F3F9;
 $bound-white: #FFFFFF;
 $bound-grey: #E9ECF4;
+$bound-grey60: #dbdce1;
 $bound-blue-submit: #2E6FED;
 $bound-black: #213547;
 $bound-link: #646cff;
 $bound-link-hover: #535bf2;
+$bound-link-focus: #3c41a4;
+
+// weights
+$bound-fontweight-bold: 600;
 
 @mixin min-width($width) {
   @media screen and (min-width: $width) {
