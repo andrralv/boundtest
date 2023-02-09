@@ -1,10 +1,12 @@
 import { MouseEventHandler, useState } from 'react'
 import { compact } from 'lodash';
-import SidePanelSteps from './SidePanelSteps';
+
+import { data_integrations, analytics_integrations, type Integration } from '../data/Integrations';
+import SidePanelSteps from './Steps/SidePanelSteps/SidePanelSteps';
 import StepOne from './Steps/StepOne';
 import StepTwo from './Steps/StepTwo';
 import StepThree from './Steps/StepThree';
-import { data_integrations, analytics_integrations, type Integration } from "../data/Integrations";
+
 import './SidePanel.scss'
 
 type SidePanelType = {
@@ -26,13 +28,13 @@ type footerButtonsType = {
 }
 
 type InitialStateType = {
-  name?: string;
+  name: string;
   analytics_integrations: Array<Integration>;
   data_integrations: Array<Integration>;
 }
 
 const initialState: InitialStateType = {
-  name: undefined,
+  name: '',
   analytics_integrations: analytics_integrations,
   data_integrations: data_integrations
 };
@@ -62,11 +64,11 @@ function SidePanel(props: SidePanelType) {
   const onClose = () => {
     setIsPanelOpen(!isPanelOpen);
     setCurrentStep(1);
-    setWebsiteData({...initialState, ...{ name: undefined }});
+    setWebsiteData({...initialState, ...{ name: '' }});
   }
 
   const setWebsiteName = (websiteName: string) => {
-    const data = Object.assign(websiteData, { name: websiteName });
+    const data = { ...websiteData , name: websiteName };
     setWebsiteData(data);
   }
 
@@ -89,7 +91,7 @@ function SidePanel(props: SidePanelType) {
   const renderCurrentStep = () => {
     switch(currentStep) {
       case 1:
-        return <StepOne setWebsiteName={setWebsiteName} websiteName={websiteData.name} />
+        return <StepOne websiteName={websiteData.name} setWebsiteName={setWebsiteName} />
       case 2:
         return <StepTwo integrations={websiteData.analytics_integrations} setIntegrations={setAnalyticsIntegrations}/>
       default:
@@ -103,8 +105,8 @@ function SidePanel(props: SidePanelType) {
         <div className="sidepanel-backdrop"></div>
         <div className="sidepanel-content">
           <PanelHeader title="New Website" isPanelOpen={isPanelOpen} onClose={onClose} setIsPanelOpen={setIsPanelOpen}/>
-          <SidePanelSteps currentStep={currentStep} setCurrentStep={setCurrentStep}/>
-          {renderCurrentStep()}
+          <SidePanelSteps currentStep={currentStep} setCurrentStep={setCurrentStep} />
+          <div className="step">{renderCurrentStep()}</div>
           <PanelFooter 
             setIsPanelOpen={setIsPanelOpen} 
             isPanelOpen={isPanelOpen} 
@@ -121,7 +123,7 @@ function SidePanel(props: SidePanelType) {
 }
 
 function PanelHeader(props: SidePanelType & headerType) {
-  const { title, onClose, isPanelOpen } = props;
+  const { title, onClose } = props;
   return (
     <div className="PanelHeader">
       <span className="header-title">{title}</span>
@@ -143,7 +145,7 @@ function PanelFooter(props: SidePanelType & footerButtonsType) {
   return (
     <div className="PanelFooter">
       <div className="footer-buttons">
-        <button className="button-cancel" onClick={onClose}>Close</button>
+        <button className="button-cancel" onClick={onClose}>Cancel</button>
         <button className="button-submit" 
           onClick={currentStepHandler}>{currentStep === 3 ? 'Submit & Create Website' : 'Next'}
         </button>

@@ -15,6 +15,10 @@
     left: 0px;
   }
 
+  .step {
+    margin: 0 24px;
+  }
+
   .sidepanel-content {
     border-left: 1px solid $bound-grey;
     position: absolute;
@@ -46,18 +50,24 @@
     justify-content: space-between;
 
     .header-title, .close-icon {
-      margin-top: 17px;
+      font-size: 20px;
+      margin-top: 15px;
+    }
+
+    .close-icon {
+      font-size: 22px;
+      margin-top: 10px;
     }
 
     .header-title {
-      margin-left: 20px;
+      margin-left: $bound-natural-margin;
     }
     
     .close-icon:after{
       margin-right: 20px;
       border: 1px solid lightgray;
       border-radius: 20px;
-      padding: 0px 7px 2px;
+      padding: 0px 7px 1px;
       font-size: 13px;
       border-radius: 50%;
       display: inline-block;
@@ -88,7 +98,6 @@
 
     .button-submit {
       @include button-submit;
-      margin-top: 20px;
       padding: 0 10px;
       margin: 20px 0;
       @include desktop {    
@@ -98,11 +107,10 @@
 
     .button-cancel {
       @include button-cancel;
-      margin-top: 20px;
       padding: 0 10px;
-      margin: 20px 0;
+      margin: 20px 0 20px 0;
       @include desktop {    
-        margin: 20px 20px 20px 0;
+        margin: 20px 10px 20px 0;
       }
     }
   }

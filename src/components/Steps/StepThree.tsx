@@ -1,7 +1,9 @@
 import { ChangeEvent, ReactElement } from "react";
 import { sortBy } from 'lodash';
 import { type Integration } from "../../data/Integrations";
-import '../SidePanelSteps.scss';
+import { ReactComponent as QuestionMark } from "../../assets/icons/question-circle.svg";
+
+import './SidePanelSteps/SidePanelSteps.scss';
 
 type StepThreeType = {
   integrations: Array<Integration>;
@@ -45,7 +47,7 @@ const TextLabel = (props: { children: ReactElement, labelText: string, withInfo:
     <div className="TextLabel">
       <div className="input-label">
         <span className="bound-label-text">{labelText}</span>
-        <span className="info-icon">{withInfo ? info : ''}</span>
+        <span className="info-icon">{withInfo ? <QuestionMark className="h-3 w-3 svg-icon"/> : ''}</span>
       </div>
       <div className="bound-label-content">{children}</div>
     </div>

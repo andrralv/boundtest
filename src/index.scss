@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import './Styles.scss';
 
 :root {
@@ -45,6 +49,10 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto $bound-link-focus;
+}
+
+.svg-icon {
+  display: inline;
 }
 
 @media (prefers-color-scheme: light) {

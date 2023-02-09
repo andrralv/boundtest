@@ -1,7 +1,8 @@
-@import '../Styles.scss';
+@import '../../../Styles.scss';
 
 .SidePanelSteps {
   margin-top: 20px;
+  margin-left: $bound-natural-margin;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -13,58 +14,60 @@
   }
 
   .step-icon {
-    font-variant-numeric: tabular-nums; // this keeps all numbers the same width
+    // font-variant-numeric: tabular-nums; // this keeps all numbers the same width
     background-color: $bound-grey60;
     border-radius: 15px;
     cursor: pointer;
   }
 
   .unchecked {
-    padding: 5px 10px;
+    padding: 0.3em 0.6em;
   }
 
   .checked {
-    padding: 5px 8px;
+    padding: 0.3em 0.44em;
   }
 
   .current {
-    padding: 5px 10px;
+    padding: 0.3em 0.6em;
     background-color: $bound-link;
     color: $bound-white;
   }
 
   .step-text {
     font-size: 14px;
+    vertical-align: top;
   }
 
   .chevron {
     margin: 0 5px;
-    font-size: 12px;
+    font-size: 10px;
+    vertical-align: text-top;
   }
 }
 
 .StepOne, .StepTwo, .StepThree {
   .bound-label-text {
-    margin: 0px 5px;
+    margin-right: 5px; 
     font-size: 14px;
     font-weight: $bound-fontweight-bold
   }
 
   .input-label {
     text-align: left;
-    margin: 20px 20px 0 20px;
+    margin: 20px 20px 0 0px;
   }
 
   .info-icon {
-    font-size: 12px;
+    display: inline;
     cursor: help;
   }
 }
 
 .StepOne {
   .bound-label-content input {
-    padding: 8px 5px;
-    width: 90%;
+    padding: 5px;
+    width: -webkit-fill-available;
     border: 1px solid $bound-grey60;
     border-radius: 5px;
     margin-top: 10px;
@@ -76,17 +79,8 @@
     margin-top: 10px;
   }
 
-  .bound-label-content input {
-    padding: 8px 5px;
-    border: 1px solid $bound-grey60;
-    border-radius: 5px;
-    margin-top: 10px;
-    text-align: left;
-  }
-
   .integrations-checkbox-list {
     text-align: left;
-    margin-left: 20px;
 
     label {
       margin-left: 10px;

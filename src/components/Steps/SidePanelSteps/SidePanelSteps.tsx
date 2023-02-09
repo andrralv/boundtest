@@ -1,4 +1,5 @@
-import { KeyboardEvent, ReactEventHandler, useEffect, useState } from 'react';
+import { KeyboardEvent, useEffect, useState } from 'react';
+import { ReactComponent as Chevron } from "../../../assets/icons/chevron-right.svg";
 
 import './SidePanelSteps.scss';
 
@@ -36,7 +37,7 @@ const SidePanelSteps = (props: SidePanelStepsType) => {
 
   const keyPressHandler = (e: KeyboardEvent, step: number) => {
    if (e.code === 'Space' || e.code === 'Enter') {
-setCurrentStep(step);
+      setCurrentStep(step);
    }
   }
 
@@ -48,13 +49,13 @@ setCurrentStep(step);
           onClick={() => setCurrentStep(1)} onKeyDown={(e) => keyPressHandler(e, 1)}>{stepOneIcon.content}
         </span>
         <span className="step-text">Name</span>
-        <span className="chevron">{'►'}</span>
+        <span className="chevron"><Chevron className="h-3 w-3 svg-icon"/></span>
       </div>
       <div className="step-two">
         <span className={`step-icon ${stepTwoIcon.status}`} tabIndex={1} 
           onClick={() => setCurrentStep(2)} onKeyDown={(e) => keyPressHandler(e, 2)}>{stepTwoIcon.content}</span>
         <span className="step-text">Analytics</span>
-        <span className="chevron">{'►'}</span>
+        <span className="chevron"><Chevron className="h-3 w-3 svg-icon"/></span>
       </div>
       <div className="step-three">
         <span className={`step-icon ${stepThreeIcon.status}`} tabIndex={1} 
