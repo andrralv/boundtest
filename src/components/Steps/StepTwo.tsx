@@ -22,12 +22,12 @@ const StepTwo = (props: StepTwoType) => {
     <div className="StepTwo">
       <TextLabel labelText="Choose One Or More Analytics Integrations" withInfo={true}>
         <div className="integrations-container">
-          {sortBy(integrations, 'order').map((integration: Integration) => 
-            <div className="integrations-checkbox-list" key={integration.id}>
-              <input 
-                type="checkbox" 
-                id={integration.id} 
-                name={integration.name} 
+          {sortBy(integrations, 'order').map((integration: Integration) =>
+            <div className="integrations-checkbox-listitem" key={integration.id}>
+              <input
+                type="checkbox"
+                id={integration.id}
+                name={integration.name}
                 checked={integration.selected}
                 onChange={(e) => websiteDataHandler(e, integration)}>
               </input>
