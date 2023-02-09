@@ -6,10 +6,11 @@ $bound-white: #FFFFFF;
 $bound-grey: #F1F3F9;
 $bound-grey60: #E1E6EF;
 $bound-blue-submit: #2F6FED;
-$bound-black: #0A0D14;
+$bound-blue-hover: #1E4EAE;
 $bound-link: #2F6FED;
 $bound-link-hover: #1D5BD6;
 $bound-link-focus: #1E4EAE;
+$bound-black: #0A0D14;
 
 // weights
 $bound-fontweight-bold: 600;
@@ -31,7 +32,6 @@ button {
   font-weight: 600;
   height: 40px;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -51,6 +51,10 @@ button {
   font-size: 14px;
   padding: 6px 10px;
   color: $bound-white;
+
+  &:hover {
+    background-color: $bound-blue-hover;
+  }
 }
 
 @mixin desktop {

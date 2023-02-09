@@ -8,13 +8,11 @@
   align-items: center;
   justify-content: center;
 
-
   span {
     margin: 0 5px 0 5px;
   }
 
   .step-icon {
-    // font-variant-numeric: tabular-nums; // this keeps all numbers the same width
     background-color: $bound-grey60;
     border-radius: 15px;
     cursor: pointer;

@@ -1,5 +1,5 @@
 import { KeyboardEvent, useEffect, useState } from 'react';
-import { ReactComponent as Chevron } from "../../../assets/icons/chevron-right.svg";
+import { ReactComponent as Chevron } from "assets/icons/chevron-right.svg";
 
 import './SidePanelSteps.scss';
 

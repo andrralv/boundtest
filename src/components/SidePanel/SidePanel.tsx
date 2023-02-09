@@ -1,11 +1,11 @@
 import { MouseEventHandler, useState } from 'react'
 import { compact } from 'lodash';
 
-import { data_integrations, analytics_integrations, type Integration } from '../data/Integrations';
-import SidePanelSteps from './Steps/SidePanelSteps/SidePanelSteps';
-import StepOne from './Steps/StepOne';
-import StepTwo from './Steps/StepTwo';
-import StepThree from './Steps/StepThree';
+import { data_integrations, analytics_integrations, type Integration } from 'data/Integrations';
+import SidePanelSteps from 'components/Steps/SidePanelSteps/SidePanelSteps';
+import StepOne from 'components/Steps/StepOne';
+import StepTwo from 'components/Steps/StepTwo';
+import StepThree from 'components/Steps/StepThree';
 
 import './SidePanel.scss'
 
@@ -55,7 +55,12 @@ function SidePanel(props: SidePanelType) {
         return { name: i.name, id: i.id }
       }
     }));
-    const data = { name: websiteData.name, analytics_integrations, data_integrations };
+    const data = { 
+      name: websiteData.name, 
+      analytics_integrations, 
+      data_integrations 
+    };
+    
     console.log(data);
     setCurrentStep(1);
     onClose();

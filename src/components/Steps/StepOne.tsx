@@ -1,5 +1,5 @@
-import { ChangeEvent, ReactElement, ReactEventHandler, ReactHTMLElement, SyntheticEvent } from "react";
-import { ReactComponent as QuestionMark } from "../../assets/icons/question-circle.svg";
+import { ChangeEvent, ReactElement } from "react";
+import { ReactComponent as QuestionMark } from "assets/icons/question-circle.svg";
 
 import './SidePanelSteps/SidePanelSteps.scss';
 

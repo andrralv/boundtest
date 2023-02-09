@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import SidePanel from './components/SidePanel'
-import './App.scss'
+import SidePanel from 'components/SidePanel/SidePanel'
+import 'App.scss'
 
 function App() {
   const [isPanelOpen, setIsPanelOpen] = useState(false)

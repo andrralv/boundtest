@@ -1,7 +1,7 @@
 import { ChangeEvent, ReactElement } from "react";
 import { sortBy } from 'lodash';
-import { type Integration } from "../../data/Integrations";
-import { ReactComponent as QuestionMark } from "../../assets/icons/question-circle.svg";
+import { type Integration } from "data/Integrations";
+import { ReactComponent as QuestionMark } from "assets/icons/question-circle.svg";
 
 import './SidePanelSteps/SidePanelSteps.scss';
 
@@ -13,7 +13,12 @@ type StepTwoType = {
 const StepTwo = (props: StepTwoType) => {
   const websiteDataHandler = (e: ChangeEvent<HTMLInputElement>, integration: Integration) => {
     const { setIntegrations } = props;
-    const data = { name: e.target.name, id: e.target.id, selected: e.target.checked, order: integration.order };
+    const data = { 
+      name: e.target.name, 
+      id: e.target.id, 
+      selected: e.target.checked, 
+      order: integration.order 
+    };
     setIntegrations(data);
   }
 

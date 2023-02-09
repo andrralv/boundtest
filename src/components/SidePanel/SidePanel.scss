@@ -1,8 +1,8 @@
-@import '../Styles.scss';
+@import '../../Styles.scss';
 
 .SidePanel {
   .sidepanel-backdrop {
-    background: black;
+    background: $bound-black;
     position: absolute;
     opacity: 0.5;
     top: 0px;
@@ -61,7 +61,7 @@
 
     .close-icon:after{
       margin-right: 20px;
-      border: 1px solid lightgray;
+      border: 1px solid $bound-grey60;
       border-radius: 20px;
       padding: 0px 7px 1px;
       font-size: 13px;
