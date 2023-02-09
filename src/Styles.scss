@@ -1,4 +1,4 @@
-$desktop: 720px;
+$desktop: 900px;
 
 // colors
 $bound-background: #F8F9FC;
@@ -26,7 +26,7 @@ $bound-natural-margin: 24px;
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 12px, 16px;
+  padding: 12px 16px;
   font-size: 14px;
   font-weight: 600;
   height: 40px;
@@ -52,3 +52,8 @@ button {
   padding: 6px 10px;
   color: $bound-white;
 }
+
+@mixin desktop {
+  @media (min-width: 900px) { @content; }
+}
+

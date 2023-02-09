@@ -1,9 +1,5 @@
 @import '../Styles.scss';
 
-@mixin desktop {
-  @media (min-width: 900px) { @content; }
-}
-
 .SidePanel {
   .sidepanel-backdrop {
     background: black;
@@ -29,8 +25,8 @@
     width: 100%;
     animation-name: slide;
     animation-duration: 0.5s;
-    
-  
+
+
     @include min-width($desktop) {
       left: 60%;
       width: 40%;
@@ -62,7 +58,7 @@
     .header-title {
       margin-left: $bound-natural-margin;
     }
-    
+
     .close-icon:after{
       margin-right: 20px;
       border: 1px solid lightgray;
@@ -89,7 +85,7 @@
       width: 80%;
       margin: 0 auto;
 
-      @include desktop {    
+      @include desktop {
         justify-content: flex-end;
         flex-direction: initial;
         width: 100%;
@@ -100,7 +96,7 @@
       @include button-submit;
       padding: 0 10px;
       margin: 20px 0;
-      @include desktop {    
+      @include desktop {
         margin: 20px 20px 20px 0;
       }
     }
@@ -109,7 +105,7 @@
       @include button-cancel;
       padding: 0 10px;
       margin: 20px 0 20px 0;
-      @include desktop {    
+      @include desktop {
         margin: 20px 10px 20px 0;
       }
     }
